@@ -1,14 +1,12 @@
 Invoices:
 
 {{#each}}
-  {{format-date created_at}}
-  {{received}}
+  <div class="well">
+    {{format-date created_at}}
+    {{received}}
+  </div>
 
-  {{#each product in invoiceProducts}}
-    {{product.name}}
-    {{product.amount}}
-    {{product.price}}
-  {{/each}}
+  {{partial 'invoice-products'}}
 {{/each}}
 
 {{outlet}}
