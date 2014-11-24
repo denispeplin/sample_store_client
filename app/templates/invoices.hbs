@@ -3,6 +3,12 @@ Invoices:
 {{#each}}
   {{created_at}}
   {{received}}
+
+  {{#each product in invoiceProducts}}
+    {{product.name}}
+    {{product.amount}}
+    {{product.price}}
+  {{/each}}
 {{/each}}
 
 {{outlet}}
