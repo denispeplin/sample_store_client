@@ -3,7 +3,9 @@ Invoices:
 {{#each}}
   <div class="well">
     {{format-date created_at}}
-    {{received}}
+    {{#unless received}}
+      <button action="receive" class="btn btn-warning">Receive</button>
+    {{/unless}}
   </div>
 
   {{partial 'invoice-products'}}
