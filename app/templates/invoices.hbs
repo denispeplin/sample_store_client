@@ -4,7 +4,7 @@ Invoices:
   <div class="well">
     {{format-date created_at}}
     {{#unless received}}
-      <button action="receive" class="btn btn-warning">Receive</button>
+      <button {{action "receive"}} class="btn btn-warning">Receive</button>
     {{/unless}}
   </div>
 
