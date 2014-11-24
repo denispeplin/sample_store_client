@@ -1,7 +1,7 @@
 Invoices:
 
 {{#each}}
-  {{created_at}}
+  {{format-date created_at}}
   {{received}}
 
   {{#each product in invoiceProducts}}
