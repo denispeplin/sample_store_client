@@ -1,7 +1,7 @@
 Invoices:
 
 {{#each}}
-<div class="panel panel-default">
+<div {{bind-attr class=":panel received:panel-success:panel-info"}}>
   <div class="panel-heading">
     {{format-date created_at}}
   </div>
