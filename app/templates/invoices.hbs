@@ -1,22 +1,17 @@
 Invoices:
 
 {{#each}}
-  <div class="well invoice">
-    <table>
-      <tr>
-        <td>
-          {{format-date created_at}}
-        </td>
-        <td>
-          {{#unless received}}
-            <button {{action "receive"}} class="btn btn-warning receive">Receive</button>
-          {{/unless}}
-        </td>
-      </tr>
-    </table>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    {{format-date created_at}}
   </div>
-
   {{partial 'invoice-products'}}
+  <div class="panel-footer">
+    {{#unless received}}
+      <button {{action "receive"}} class="btn btn-warning">Receive</button>
+    {{/unless}}
+  </div>
+</div>
 {{/each}}
 
 {{outlet}}
