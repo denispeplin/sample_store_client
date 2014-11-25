@@ -7,9 +7,7 @@ Invoices:
   </div>
   {{partial 'invoice-products'}}
   <div class="panel-footer">
-    {{#unless received}}
-      <button {{action "receive"}} class="btn btn-warning">Receive</button>
-    {{/unless}}
+    <button {{action "receive"}} {{bind-attr class=":btn received:btn-disabled:btn-warning"}} {{bind-attr disabled=received}}>Receive</button>
   </div>
 </div>
 {{/each}}
