@@ -14,7 +14,12 @@
       <td>{{name}}</td>
       <td>{{amount}}</td>
       <td>{{price}}</td>
-      <td>{{input type='number' value=reserve min=0 max=amount}}</td>
+      <td>
+        {{input type='number' value=reserve min=0 max=amount}}
+        <button type="button" {{action "reserve"}} {{bind-attr class=":btn :btn-primary :btn-xs notReserving"}}>
+          {{fa-icon "save"}}
+        </button>
+      </td>
       <td>{{totalPrice}}</td>
     </tr>
     {{/each}}
