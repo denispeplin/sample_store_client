@@ -1,6 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  amount: DS.attr(),
-  price: DS.attr()
+  name: DS.attr('string'),
+  amount: DS.attr('number'),
+  price: DS.attr('number')
 });
