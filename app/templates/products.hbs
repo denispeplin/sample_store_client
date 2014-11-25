@@ -4,6 +4,8 @@
       <th>Name</th>
       <th>Amount</th>
       <th>Price</th>
+      <th>Reserve</th>
+      <th>Total price</th>
     </tr>
   </thead>
   <tbody>
@@ -12,6 +14,8 @@
       <td>{{name}}</td>
       <td>{{amount}}</td>
       <td>{{price}}</td>
+      <td>{{input type='number' value=reserve min=0 max=amount}}</td>
+      <td>{{totalPrice}}</td>
     </tr>
     {{/each}}
   </tbody>
