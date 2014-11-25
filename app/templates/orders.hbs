@@ -4,6 +4,9 @@
     {{format-date created_at}}
   </div>
   {{partial 'order-products'}}
+  <div class="panel-footer">
+    <button {{action "sell"}} {{bind-attr class=":btn sold:btn-disabled:btn-warning"}} {{bind-attr disabled=sold}}>Sell</button>
+  </div>
 </div>
 {{/each}}
 
