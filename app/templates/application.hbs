@@ -5,10 +5,12 @@
     </div>
     <div class="col-xs-3">
       <ul class="nav nav-pills nav-stacked">
-        <li role="presentation">
-          {{#link-to 'invoices'}}Invoices{{/link-to}}
-          {{#link-to 'products'}}Products{{/link-to}}
-        </li>
+        {{#link-to "invoices" tagName="li" href=false}}
+          <a {{bind-attr href="view.href"}}>Invoices</a>
+        {{/link-to}}
+        {{#link-to "products" tagName="li" href=false}}
+          <a {{bind-attr href="view.href"}}>Products</a>
+        {{/link-to}}
       </ul>
     </div>
   </div>
