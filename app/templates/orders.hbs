@@ -1,0 +1,10 @@
+{{#each}}
+<div {{bind-attr class=":panel sold:panel-success:panel-info"}}>
+  <div class="panel-heading">
+    {{format-date created_at}}
+  </div>
+  {{partial 'order-products'}}
+</div>
+{{/each}}
+
+{{outlet}}
