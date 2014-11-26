@@ -7,5 +7,15 @@ export default Ember.ObjectController.extend({
     } else {
       return this.get('selected') ? 'panel-primary' : 'panel-info';
     }
-  }.property('placed', 'selected')
+  }.property('placed', 'selected'),
+  actions: {
+    place: function() {
+      this.set('placed', true);
+      var self = this;
+      this.get('model').save().then(function () {
+      }, function (response) {
+        self.set('errors', response.responseJSON.errors);
+      });
+    }
+  }
 });

@@ -5,5 +5,8 @@
     {{view Ember.Checkbox checkedBinding="selected" class="checkbox-inline pull-right"}}
   </div>
   {{partial 'bid-products'}}
+  <div class="panel-footer">
+    <button {{action "place"}} {{bind-attr class=":btn placed:btn-disabled:btn-warning"}} {{bind-attr disabled=placed}}>Place</button>
+  </div>
 </div>
 {{/each}}
