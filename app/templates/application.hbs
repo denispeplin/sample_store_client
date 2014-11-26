@@ -1,20 +1,10 @@
 <div class="container-fluid">
   <div class="row">
+    <div class="col-xs-3">
+      {{partial 'sidemenu'}}
+    </div>
     <div class="col-xs-9">
       {{outlet}}
-    </div>
-    <div class="col-xs-3">
-      <ul class="nav nav-pills nav-stacked">
-        {{#link-to "invoices" tagName="li" href=false}}
-          <a {{bind-attr href="view.href"}}>Invoices</a>
-        {{/link-to}}
-        {{#link-to "products" tagName="li" href=false}}
-          <a {{bind-attr href="view.href"}}>Products</a>
-        {{/link-to}}
-        {{#link-to "orders" tagName="li" href=false}}
-          <a {{bind-attr href="view.href"}}>Orders</a>
-        {{/link-to}}
-      </ul>
     </div>
   </div>
 </div>
