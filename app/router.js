@@ -9,6 +9,7 @@ Router.map(function() {
   this.resource('invoices');
   this.resource('products');
   this.resource('orders');
+  this.resource('bids');
 });
 
 export default Router;

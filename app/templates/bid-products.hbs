@@ -1,0 +1,18 @@
+<table class="table table-striped table-bordered table-compact">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each product in bidProducts}}
+    <tr>
+      <td>{{product.name}}</td>
+      <td>{{product.amount}}</td>
+      <td>{{product.price}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
