@@ -11,7 +11,11 @@
     {{#with product}}
     <tr>
       <td>{{product.name}}</td>
-      <td>{{product.amount}}</td>
+      <td>
+        {{#editable-number number=product.amount}}
+          {{input type="number" min="0" value=product.amount}}
+        {{/editable-number}}
+      </td>
       <td>{{product.price}}</td>
     </tr>
     {{/with}}
