@@ -1,5 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
-  itemController: 'bid'
+  itemController: 'bid',
+  selectedCount: 0,
+  selectedMany: false
 });

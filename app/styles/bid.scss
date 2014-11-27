@@ -1,3 +1,15 @@
 .placed input.bid {
   visibility: hidden;
 }
+
+input.bid {
+  margin-top: 5px;
+}
+
+button.bid-combine {
+  margin-right: 5px;
+  visibility: hidden;
+  &.selected.selected-many {
+    visibility: visible;
+  }
+}

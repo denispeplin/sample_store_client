@@ -3,6 +3,7 @@
   <div class="panel-heading">
     {{format-date created_at}}
     {{view Ember.Checkbox checkedBinding="selected" class="bid checkbox-inline pull-right"}}
+    <button {{bind-attr class=":btn :btn-xs :btn-success :pull-right :bid-combine selected selectedMany"}}>Combine</button>
   </div>
   {{partial 'bid-products'}}
   <div class="panel-footer">
