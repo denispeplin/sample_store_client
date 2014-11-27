@@ -10,9 +10,9 @@
     {{#each product in bidProducts itemController='bid-product'}}
     {{#with product}}
     <tr>
-      <td>{{product.name}}</td>
+      <td>{{isEditing}}{{product.name}}</td>
       <td class="amount">
-        {{#editable-number number=product.amount}}
+        {{#editable-number number=product.amount isEditing=isEditing}}
           {{input type="number" min="0" value=product.amount}}
         {{/editable-number}}
         <button type="button" {{action "save"}} {{bind-attr class=":btn :btn-primary :btn-xs isDirty"}}>

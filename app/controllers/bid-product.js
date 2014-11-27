@@ -5,6 +5,7 @@ export default Ember.ObjectController.extend({
     save: function() {
       var self = this;
       this.get('model').save().then(function () {
+        self.set('isEditing', false);
       }, function (response) {
         self.set('errors', response.responseJSON.errors);
       });
