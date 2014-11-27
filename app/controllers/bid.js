@@ -5,12 +5,6 @@ export default Ember.ObjectController.extend({
   selectedCount: Ember.computed.alias('controllers.bids.selectedCount'),
   selectedMany: Ember.computed.alias('controllers.bids.selectedMany'),
   selectedBids: Ember.computed.alias('controllers.bids.selectedBids'),
-  otherSelectedBids: function() {
-    var id = this.get('id');
-    return this.get('selectedBids').filter(function(bid_id) {
-      return id !== bid_id;
-    });
-  }.property('selectedBids'),
   trackSelected: function() {
     if (this.get('selected')) {
       this.incrementProperty('selectedCount');
@@ -28,7 +22,8 @@ export default Ember.ObjectController.extend({
   }.property('placed', 'selected'),
   actions: {
     combine: function() {
-      this.set('combine', this.get('otherSelectedBids'));
+      this.set('selected', false);
+      this.set('combine', this.get('selectedBids'));
       var self = this;
       this.get('model').save().then(function () {
         self.send('refreshRoute');
