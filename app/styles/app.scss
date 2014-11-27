@@ -6,3 +6,13 @@
 html, body {
   margin: 20px;
 }
+
+td.amount {
+  min-width: 10em;
+  input {
+    padding: 0;
+    line-height: 0.9em;
+    font-size: 0.9em;
+    width: 5em;
+  }
+}
