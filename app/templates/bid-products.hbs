@@ -7,12 +7,14 @@
     </tr>
   </thead>
   <tbody>
-    {{#each product in bidProducts}}
+    {{#each product in bidProducts itemController='bid-product'}}
+    {{#with product}}
     <tr>
       <td>{{product.name}}</td>
       <td>{{product.amount}}</td>
       <td>{{product.price}}</td>
     </tr>
+    {{/with}}
     {{/each}}
   </tbody>
 </table>
