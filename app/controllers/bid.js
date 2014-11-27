@@ -4,6 +4,7 @@ export default Ember.ObjectController.extend({
   needs: ['bids'],
   selectedCount: Ember.computed.alias('controllers.bids.selectedCount'),
   selectedMany: Ember.computed.alias('controllers.bids.selectedMany'),
+  selectedBids: Ember.computed.alias('controllers.bids.selectedBids'),
   trackSelected: function() {
     if (this.get('selected')) {
       this.incrementProperty('selectedCount');
@@ -20,6 +21,14 @@ export default Ember.ObjectController.extend({
     }
   }.property('placed', 'selected'),
   actions: {
+    combine: function() {
+      this.set('combine', this.get('selectedBids'));
+      var self = this;
+      this.get('model').save().then(function () {
+      }, function (response) {
+        self.set('errors', response.responseJSON.errors);
+      });
+    },
     place: function() {
       this.set('placed', true);
       var self = this;
