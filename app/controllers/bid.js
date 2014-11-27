@@ -31,6 +31,7 @@ export default Ember.ObjectController.extend({
       this.set('combine', this.get('otherSelectedBids'));
       var self = this;
       this.get('model').save().then(function () {
+        self.send('refreshRoute');
       }, function (response) {
         self.set('errors', response.responseJSON.errors);
       });
