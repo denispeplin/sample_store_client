@@ -11,7 +11,7 @@
     {{#with product}}
     <tr>
       <td>{{product.name}}</td>
-      <td class="amount">
+      <td {{bind-attr class=":amount bidActive"}}>
         {{#editable-number number=product.amount isEditing=isEditing editable=bidActive}}
           {{input type="number" min="0" value=product.amount}}
         {{/editable-number}}

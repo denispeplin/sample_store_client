@@ -27,4 +27,9 @@ td.amount {
       visibility: visible;
     }
   }
+  &.bid-active span {
+    text-decoration: none;
+    border-bottom: dashed 1px;
+    cursor: pointer;
+  }
 }
