@@ -15,4 +15,16 @@ td.amount {
     font-size: 0.9em;
     width: 5em;
   }
+  div {
+    display: inline;
+  }
+  form {
+    display: inline-block;
+  }
+  button {
+    visibility: hidden;
+    &.is-dirty{
+      visibility: visible;
+    }
+  }
 }

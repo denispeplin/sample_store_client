@@ -15,6 +15,9 @@
         {{#editable-number number=product.amount}}
           {{input type="number" min="0" value=product.amount}}
         {{/editable-number}}
+        <button type="button" {{action "save"}} {{bind-attr class=":btn :btn-primary :btn-xs isDirty"}}>
+          {{fa-icon "save"}}
+        </button>
       </td>
       <td>{{product.price}}</td>
     </tr>
