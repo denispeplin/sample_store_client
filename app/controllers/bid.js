@@ -36,6 +36,7 @@ export default Ember.ObjectController.extend({
       });
     },
     place: function() {
+      this.set('selected', false);
       this.set('placed', true);
       var self = this;
       this.get('model').save().then(function () {
