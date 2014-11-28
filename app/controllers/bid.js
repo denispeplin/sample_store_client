@@ -2,17 +2,8 @@ import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
   needs: ['bids'],
-  selectedCount: Ember.computed.alias('controllers.bids.selectedCount'),
   selectedMany: Ember.computed.alias('controllers.bids.selectedMany'),
   selectedBids: Ember.computed.alias('controllers.bids.selectedBids'),
-  trackSelected: function() {
-    if (this.get('selected')) {
-      this.incrementProperty('selectedCount');
-    } else {
-      this.decrementProperty('selectedCount');
-    }
-    this.set('selectedMany', this.get('selectedCount') > 1 ? true : false);
-  }.observes('selected'),
   panelClass: function() {
     if (this.get('placed')) {
       return 'panel-success';
