@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
   itemController: 'product',
-  settingsShown: true,
+  settingsShown: false,
   actions: {
     toggleSettings: function() {
       this.toggleProperty('settingsShown');
