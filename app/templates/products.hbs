@@ -2,6 +2,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Min Amount</th>
       <th>Amount</th>
       <th>Price</th>
       <th>Reserve</th>
@@ -12,11 +13,17 @@
     {{#each}}
     <tr>
       <td>{{name}}</td>
+      <td>
+        {{input type='number' value=minAmount min=0 max=10000}}
+        <button type="button" {{action "save"}} {{bind-attr class=":btn :btn-primary :btn-xs :save-dirty isMinAmount:is-dirty"}}>
+          {{fa-icon "save"}}
+        </button>
+      </td>
       <td>{{amount}}</td>
       <td>{{price}}</td>
       <td>
         {{input type='number' value=reserve min=0 max=amount}}
-        <button type="button" {{action "reserve"}} {{bind-attr class=":btn :btn-primary :btn-xs notReserving"}}>
+        <button type="button" {{action "save"}} {{bind-attr class=":btn :btn-primary :btn-xs notReserving"}}>
           {{fa-icon "save"}}
         </button>
       </td>

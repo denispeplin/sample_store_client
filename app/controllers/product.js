@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
   actions: {
-    reserve: function() {
+    save: function() {
       var self = this;
       this.get('model').save().then(function () {
       }, function (response) {
@@ -15,5 +15,8 @@ export default Ember.ObjectController.extend({
   }.property('price', 'reserve'),
   notReserving: function() {
     return this.get('reserve') < 1;
-  }.property('reserve')
+  }.property('reserve'),
+  isMinAmount: function() {
+    return (!!this.get('minAmount') && this.get('isDirty'));
+  }.property('minAmount', 'isDirty')
 });
