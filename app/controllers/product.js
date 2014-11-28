@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+  needs: ['products'],
   actions: {
     save: function() {
       var self = this;
@@ -10,6 +11,7 @@ export default Ember.ObjectController.extend({
       });
     }
   },
+  settingsShown: Ember.computed.alias('controllers.products.settingsShown'),
   totalPrice: function() {
     return (this.get('price') * this.get('reserve')).toFixed(2);
   }.property('price', 'reserve'),

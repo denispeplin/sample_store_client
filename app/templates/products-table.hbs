@@ -1,0 +1,34 @@
+<table class="table table-striped table-bordered table-compact">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th {{bind-attr class=":settings settingsShown::hide"}}>Min Amount</th>
+      <th>Amount</th>
+      <th>Price</th>
+      <th>Reserve</th>
+      <th>Total price</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each}}
+    <tr>
+      <td>{{name}}</td>
+      <td {{bind-attr class=":settings settingsShown::hide"}}>
+        {{input type='number' value=minAmount min=0 max=10000}}
+        <button type="button" {{action "save"}} {{bind-attr class=":btn :btn-primary :btn-xs :save-dirty isMinAmount:is-dirty"}}>
+          {{fa-icon "save"}}
+        </button>
+      </td>
+      <td>{{amount}}</td>
+      <td>{{price}}</td>
+      <td>
+        {{input type='number' value=reserve min=0 max=amount}}
+        <button type="button" {{action "save"}} {{bind-attr class=":btn :btn-primary :btn-xs notReserving"}}>
+          {{fa-icon "save"}}
+        </button>
+      </td>
+      <td>{{totalPrice}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
