@@ -1,0 +1,21 @@
+<table class="table table-striped table-bordered table-compact">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each}}
+    <tr>
+      <td>{{name}}</td>
+      <td>
+        {{input type='number' value=number min=0}}
+        <button type="button" {{action "save"}} {{bind-attr class=":btn :btn-primary :btn-xs :save-dirty isDirty"}}>
+          {{fa-icon "save"}}
+        </button>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

@@ -10,6 +10,7 @@ Router.map(function() {
   this.resource('products');
   this.resource('orders');
   this.resource('bids');
+  this.resource('settings', function() { });
 });
 
 export default Router;

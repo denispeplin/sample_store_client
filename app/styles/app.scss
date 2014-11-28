@@ -33,3 +33,10 @@ td.amount {
     cursor: pointer;
   }
 }
+
+.save-dirty {
+  visibility: hidden;
+  &.is-dirty {
+    visibility: visible;
+  }
+}
