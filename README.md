@@ -13,14 +13,14 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* change into the new directory
+* `git clone git@github.com:denispeplin/sample_store_client.git`
+* `cd sample_store_client`
 * `npm install`
 * `bower install`
 
 ## Running / Development
 
-* Run `sample_store` Rails application.
+* Run [sample_store](https://github.com/denispeplin/sample_store) Rails application.
 * `ember server --proxy http://localhost:3000`
 * Visit your app at http://localhost:4200.
 
